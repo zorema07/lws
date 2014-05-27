@@ -1,19 +1,22 @@
 @extends('layout.main')
 
 @section('content')
+    <!--about us -->
     <div id="about" class="intro">
         <div class="container">
             <div class="row">
                 <div class="col-md-6 col-md-offset-3 text-center">
-                  <h2>  Motto : 'Seek & you shall find' </h2>
+                    <h2>  Motto : 'Seek & you shall find' </h2>
+                    <hr>
                     <p> Address : Mission Vengthlang, Aizawl</P>
                     <p>Contact : 0389 - 2324866</P>
                 </div>
             </div>
         </div>
     </div>
+    <!--/about us -->
 
-    
+    <!-- gallery -->
     <div id="gallery" class="gallery">
         <div class="container">
             <div class="row">
@@ -60,6 +63,7 @@
             </div>
         </div>
     </div>
+    <!-- /gallery -->
 
      <div id="services" class="services">
         <div class="container">
@@ -110,6 +114,7 @@
     </div>
     <!-- /Callout -->
 
+    <!-- google map -->
     <div id="contact" class="map">
         <iframe width="100%" height="100%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&amp;aq=0&amp;oq=twitter&amp;sll=28.659344,-81.187888&amp;sspn=0.128789,0.264187&amp;ie=UTF8&amp;hq=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&amp;t=m&amp;z=15&amp;iwloc=A&amp;output=embed"></iframe>
         <br />
@@ -118,5 +123,6 @@
         </small>
         </iframe>
     </div>
+    <!--/google map-->
 
 @stop

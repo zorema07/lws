@@ -13,11 +13,11 @@
     </div>
 
     
-    <div id="portfolio" class="portfolio">
+    <div id="gallery" class="gallery">
         <div class="container">
             <div class="row">
                 <div class="col-md-4 col-md-offset-4 text-center">
-                    <h2>Our Work</h2>
+                    <h2>Gallery</h2>
                     <hr>
                 </div>
             </div>
@@ -27,7 +27,7 @@
                         <a href="#">
                             <img class="img-portfolio img-responsive" src="img/portfolio-1.jpg">
                         </a>
-                        <h4>Cityscape</h4>
+                        <h4>Full Building View</h4>
                     </div>
                 </div>
                 <div class="col-md-4 text-center">
@@ -35,7 +35,7 @@
                         <a href="#">
                             <img class="img-portfolio img-responsive" src="img/portfolio-2.jpg">
                         </a>
-                        <h4>Is That On Fire?</h4>
+                        <h4>Buliding Front View</h4>
                     </div>
                 </div>
             </div>
@@ -45,7 +45,7 @@
                         <a href="#">
                             <img class="img-portfolio img-responsive" src="img/portfolio-3.jpg">
                         </a>
-                        <h4>Stop Sign</h4>
+                        <h4>Principal</h4>
                     </div>
                 </div>
                 <div class="col-md-4 text-center">
@@ -53,7 +53,7 @@
                         <a href="#">
                             <img class="img-portfolio img-responsive" src="img/portfolio-4.jpg">
                         </a>
-                        <h4>Narrow Focus</h4>
+                        <h4>Staff</h4>
                     </div>
                 </div>
             </div>

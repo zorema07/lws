@@ -30,9 +30,9 @@
                 </li>
                 <li><a href="#about">About</a>
                 </li>
-                <li><a href="#services">Services</a>
+                <li><a href="#gallery">Gallery</a>
                 </li>
-                <li><a href="#portfolio">Portfolio</a>
+                 <li><a href="#services">Services</a>
                 </li>
                 <li><a href="#contact">Contact</a>
                 </li>

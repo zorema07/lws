@@ -13,6 +13,7 @@
 
 Route::get('/', function()
 {
-	return View::make('layout.main');
+	return View::make('content.index');
 	
 });
+

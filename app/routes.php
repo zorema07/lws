@@ -10,7 +10,11 @@
 | and give it the Closure to execute when that URI is requested.
 |
 */
-
+Route::resource('administrator', 'AdministratorController');
+Route::resource('gallery-categories', 'GalleryCategoriesController');
+Route::resource('gallery', 'GalleryController');
+Route::resource('post-categories', 'PostCategoriesController');
+Route::resource('post', 'PostController');
 Route::get('/', function()
 {
 	return View::make('content.index');

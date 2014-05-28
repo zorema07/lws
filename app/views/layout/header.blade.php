@@ -10,7 +10,7 @@
     <title>Living Water School</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="css/bootstrap.css" rel="stylesheets">
+    <link href="css/bootstrap.css" rel="stylesheet">
 
     <!-- Add custom CSS here -->
     <link href="css/stylish-portfolio.css" rel="stylesheet">

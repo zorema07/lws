@@ -1,0 +1,53 @@
+
+<?php $__env->startSection('content'); ?>
+<div class="row align-center">
+	<div class="col-md-12">
+		<div class="panel panel-default" >
+			<div class="panel-heading" ><h4><span class="pull right">Create Categories</h4></span></div>
+				<div class="panel-body">
+					<div class="col-md-3"></div>
+					<?php echo Form::model($categoriesById, array('route' => array('gallery-categories.update', $categoriesById->id),'class' => 'form-horizontal','files' => 'true' ,'method' => 'PUT')); ?>
+					<?php if(Session::has('message')): ?>
+						<div class="alert alert-success">
+							<?php echo Session::get('message'); ?>	
+						</div>
+					<?php endif; ?>
+
+					<div class="col-md-6">
+						<div class="form-group">
+						<?php echo Form::label('category', 'Select category', array('class'=>'control-label')); ?>
+						<?php echo Form::select('parent_id', array('0'=>'No Parent')+$categories, $categoriesById->parent_id, array('class' => 'input-sm form-control','style' => 'width:200px')); ?>
+						<?php if($errors->has('parent_id')): ?>
+							<p class="help-block"><span class="text-danger"><?php echo $errors->first('parent_id'); ?></span></p>
+						<?php endif; ?>
+					</div>	
+					<div class="form-group">
+						<?php echo Form::label('title', 'Category', array('class'=>'control-label')); ?>
+						<?php echo Form::text('category_name', Input::old('category_name'),  array('class' => 'input-sm form-control', 'placeholder'=>'Category Name')); ?>
+						<?php if($errors->has('category_name')): ?>
+						<p class="help-block"><span class="text-danger"><?php echo $errors->first('category_name'); ?></span></p>
+						<?php endif; ?>
+					</div>
+					<div class="form-group">
+						<?php echo Form::label('title', 'Cover', array('class'=>'control-label')); ?>
+						<?php echo Form::file('cover', '',  array('class' => 'input-sm form-control')); ?>
+						<?php if($errors->has('category_name')): ?>
+							<p class="help-block"><span class="text-danger"><?php echo $errors->first('category_name'); ?></span></p>
+						<?php endif; ?>
+					</div>
+					<div class="form-group text-right">
+						<div class="col-md-4">
+							<div class="thumbnail" >
+								<?php echo HTML::image($categoriesById->cover); ?>
+							</div>
+						</div>
+						<button type="submit" class="btn btn-sm btn-primary">Save</button>
+					</div>
+					<div class="col-md-3"></div>
+				</div>
+		</div>
+	</div>
+</div>
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('layout.admin', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

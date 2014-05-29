@@ -33,7 +33,20 @@ class GalleryCategoriesController extends \BaseController {
 	 */
 	public function store()
 	{
-		//
+		$categories = new GalleryCategories;
+		if(Input::hasFile('cover')){
+			$cover = Input::file('cover');
+			$destinationPath = "uploads/";
+			$extension = $cover->getClientOriginalExtension();
+			$filename = uniqid().".".$extension;
+			$uploads = $cover->move($destinationPath,$filename);
+			$categories->cover = $destinationPath.$filename;
+		}
+		$categories->category_name = Input::get('category_name');
+		$categories->parent_id = Input::get('parent_id');
+		$categories->save();
+
+		return Redirect::to("gallery-categories")->with('message','Successfully Added!');
 	}
 
 
@@ -57,7 +70,12 @@ class GalleryCategoriesController extends \BaseController {
 	 */
 	public function edit($id)
 	{
-		//
+		$categoriesById = GalleryCategories::find($id);
+		$categories = GalleryCategories::orderBy('category_name','asc')->lists('category_name','id');
+		return View::make('gallery-categories.edit',array(
+									'categoriesById'=>$categoriesById,
+									'categories'=>$categories
+									));
 	}
 
 
@@ -69,7 +87,20 @@ class GalleryCategoriesController extends \BaseController {
 	 */
 	public function update($id)
 	{
-		//
+		$categories = GalleryCategories::find($id);
+		if(Input::hasFile('cover')){
+			$cover = Input::file('cover');
+			$destinationPath = "uploads/";
+			$extension = $cover->getClientOriginalExtension();
+			$filename = uniqid().".".$extension;
+			$uploads = $cover->move($destinationPath,$filename);
+			$categories->cover = $destinationPath.$filename;
+		}
+		$categories->category_name = Input::get('category_name');
+		$categories->parent_id = Input::get('parent_id');
+		$categories->save();
+
+		return Redirect::to("gallery-categories")->with('message','Successfully Updated!');
 	}
 
 

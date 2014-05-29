@@ -27,7 +27,13 @@
 						<?php foreach($categories as $category): ?>
 						<tr >
 							<td><?php echo ++$i; ?></td>
-							<td><?php echo $category->parent_id; ?></td>
+							<td>
+								<?php if($category->parent_id == 0) { 
+									echo "No Parent"; 
+								} else { 
+									echo $category->parent->category_name; 
+								} ?>
+							</td>
 							<td><?php echo $category->category_name; ?></td>
 							<td><?php echo $category->cover; ?></td>
 							<td>

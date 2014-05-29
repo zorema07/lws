@@ -28,7 +28,13 @@
 						@foreach($categories as $category)
 						<tr >
 							<td>{{++$i}}</td>
-							<td>{{$category->parent_id}}</td>
+							<td>
+								<?php if($category->parent_id == 0) { 
+									echo "No Parent"; 
+								} else { 
+									echo $category->parent->category_name; 
+								} ?>
+							</td>
 							<td>{{$category->category_name}}</td>
 							<td>{{$category->cover}}</td>
 							<td>

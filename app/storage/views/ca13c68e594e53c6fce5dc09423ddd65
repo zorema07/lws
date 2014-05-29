@@ -1,0 +1,23 @@
+
+<?php $__env->startSection('content'); ?>
+<div class="panel panel-default">
+    <div class="panel-heading"><h4>GALLERY </h4></div>
+    <div class="panel-body">
+	  	<?php foreach($gallery as $photo): ?>
+	    <div class="col-xs-3">
+	        	<div class="thumbnail">
+	            	<?php echo HTML::image($photo->path,$photo->caption,array('data-toggle'=>'modal', 'data-target'=>'.logo')); ?>
+	            	<div class="caption">
+	                	<?php echo $photo->caption; ?>
+	                	<?php echo Form::open(array('url'=>route('gallery.destroy',array($photo->id)),'method'=>'delete','onsubmit'=>"return confirm('Are You Sure?');")); ?>
+	                		<a href="<?php echo URL::route('gallery.edit',$photo->id); ?>" class="btn btn-xs btn-success glyphicon glyphicon-edit"></a>
+	                		<button type="submit" class="btn btn-xs btn-danger glyphicon glyphicon-remove"></botton>
+	                	<?php echo Form::close(); ?>
+	            	</div>
+	        	</div>
+	    </div>
+    <?php endforeach; ?>
+    </div>
+</div>
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('layout.admin', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

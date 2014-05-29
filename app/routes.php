@@ -15,6 +15,7 @@ Route::resource('gallery-categories', 'GalleryCategoriesController');
 Route::resource('gallery', 'GalleryController');
 Route::resource('post-categories', 'PostCategoriesController');
 Route::resource('post', 'PostController');
+Route::resource('user', 'UserController');
 Route::get('/', function()
 {
 	return View::make('content.index');

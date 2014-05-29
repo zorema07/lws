@@ -16,6 +16,7 @@ class CreateGalleryCategoriesTable extends Migration {
 			$table->increments('id');
 			$table->integer('parent_id');
 			$table->string('category_name');
+			$table->string('cover');
 			$table->timestamps();
 		});
 	}

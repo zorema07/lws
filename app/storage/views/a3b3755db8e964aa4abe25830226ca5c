@@ -8,17 +8,17 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
             <!-- script references -->
         <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
-        {{ HTML::Script('admin/js/scripts.js') }}
-        {{ HTML::Script('admin/js/bootstrap.min.js') }}
+        <?php echo HTML::Script('admin/js/scripts.js'); ?>
+        <?php echo HTML::Script('admin/js/bootstrap.min.js'); ?>
         
-        {{ HTML::Style('admin/css/bootstrap.min.css') }}
+        <?php echo HTML::Style('admin/css/bootstrap.min.css'); ?>
         <!--[if lt IE 9]>
             <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
         <![endif]-->
-        {{ HTML::Style('admin/css/styles.css') }}
+        <?php echo HTML::Style('admin/css/styles.css'); ?>
          <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
-        {{ HTML::Script('admin/js/scripts.js') }}
-        {{ HTML::Script('admin/js/bootstrap.min.js') }}
+        <?php echo HTML::Script('admin/js/scripts.js'); ?>
+        <?php echo HTML::Script('admin/js/bootstrap.min.js'); ?>
         <link rel="stylesheet"  href="admin/redactor923/redactor.css">
         <script src="admin/redactor923/redactor.min.js"></script>
     </head>
@@ -64,12 +64,12 @@
           <h5>Settings <i class="glyphicon glyphicon-chevron-down"></i></h5>
           </a>
             <ul class="list-unstyled collapse in" id="userMenu">
-                <li class="active"> <a href="{{ URL::route('administrator.index') }}"><i class="glyphicon glyphicon-home"></i> Home</a></li>
-                <li><a href="{{ URL::route('gallery-categories.index') }}"><i class="glyphicon glyphicon-list-alt"></i> Gallery Category</a></li>
-                <li><a href="{{ URL::route('gallery.index') }}"><i class="glyphicon glyphicon-picture"></i> Gallery</a></li>
-                <li><a href="{{ URL::route('post-categories.index') }}"><i class="glyphicon glyphicon-list"></i> Post Category</a></li>
-                <li><a href="{{ URL::route('post.index') }}"><i class="glyphicon glyphicon-file"></i> Post</a></li>
-                <li><a href="{{ URL::route('user.index') }}"><i class="glyphicon glyphicon-user"></i> User Account</a></li>
+                <li class="active"> <a href="<?php echo URL::route('administrator.index'); ?>"><i class="glyphicon glyphicon-home"></i> Home</a></li>
+                <li><a href="<?php echo URL::route('gallery-categories.index'); ?>"><i class="glyphicon glyphicon-list-alt"></i> Gallery Category</a></li>
+                <li><a href="<?php echo URL::route('gallery.index'); ?>"><i class="glyphicon glyphicon-picture"></i> Gallery</a></li>
+                <li><a href="<?php echo URL::route('post-categories.index'); ?>"><i class="glyphicon glyphicon-list"></i> Post Category</a></li>
+                <li><a href="<?php echo URL::route('post.index'); ?>"><i class="glyphicon glyphicon-file"></i> Post</a></li>
+                <li><a href="<?php echo URL::route('user.index'); ?>"><i class="glyphicon glyphicon-user"></i> User Account</a></li>
                 <li><a href="#"><i class="glyphicon glyphicon-off"></i> Logout</a></li>
             </ul>
         </li>
@@ -125,7 +125,7 @@
            
             
           
-          @yield('content')
+          <?php echo $__env->yieldContent('content'); ?>
      
         </div><!--/row-->
       

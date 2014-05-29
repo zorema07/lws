@@ -1,0 +1,33 @@
+
+<?php $__env->startSection('content'); ?>
+<div class="panel panel-default">
+    <div class="panel-heading"><h4>Upload Image </h4></div>
+    <div class="panel-body">
+    	<div class="col-md-2"></div>
+    	<div class="col-md-8">
+	       <?php echo Form::model($gallery, array('route' => array('gallery.update', $gallery->id),'class' => 'form-horizontal','files' => 'true' ,'method' => 'PUT')); ?>
+	       		<div class="form-group">
+	            	<div class="col-sm-4"><?php echo Form::label('Categories'); ?></div>
+	                <div class="col-sm-8">
+	                    <?php echo Form::select('categories_id',$categories,Input::old($gallery->categories_id),array('class'=>'form-control input-sm','required')); ?>
+	                </div>
+	            </div>
+	            <div class="form-group">
+	            	<div class="col-sm-4"><?php echo Form::label('Caption'); ?></div>
+	                <div class="col-sm-8">
+	                    <?php echo Form::text('caption',Input::old('caption'),array('class'=>'form-control input-sm','required')); ?>
+	                </div>
+	            </div>
+	            <div class="form-group">
+	            	<div class="col-sm-4"></div>
+	                <div class="col-sm-8">
+	            	   <?php echo Form::submit('Update',array('class'=>'btn btn-success btn-sm')); ?>
+	                </div>
+	            </div>
+	      <?php echo Form::close(); ?>
+      </div>
+      <div class="col-md-2"></div>
+    </div>
+</div>
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('layout.admin', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

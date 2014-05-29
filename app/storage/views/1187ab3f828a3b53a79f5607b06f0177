@@ -1,6 +1,5 @@
-@extends('layout.admin')
 
-@section('content')
+<?php $__env->startSection('content'); ?>
   <!-- center left--> 
   <div class="col-md-6">
     <div class="well">Inbox Messages <span class="badge pull-right">3</span></div>
@@ -212,4 +211,5 @@
       </ul>
     </div>
   </div>
-@stop
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('layout.admin', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

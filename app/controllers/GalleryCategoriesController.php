@@ -9,7 +9,8 @@ class GalleryCategoriesController extends \BaseController {
 	 */
 	public function index()
 	{
-		//
+		$categories = GalleryCategories::orderBy('category_name')->get();
+		return View::make('gallery-categories.index',array('categories'=>$categories));
 	}
 
 
@@ -20,7 +21,8 @@ class GalleryCategoriesController extends \BaseController {
 	 */
 	public function create()
 	{
-		//
+		$categories = GalleryCategories::orderBy('category_name')->lists('category_name','id');
+		return View::make('gallery-categories.create',array('categories'=>$categories));
 	}
 
 
@@ -79,7 +81,8 @@ class GalleryCategoriesController extends \BaseController {
 	 */
 	public function destroy($id)
 	{
-		//
+		GalleryCategories::destroy($id);
+		return Redirect::route("gallery-categories.index")->with('message','Successfully Deleted!');
 	}
 
 

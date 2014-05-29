@@ -154,14 +154,5 @@
     </div><!-- /.modal-content -->
   </div><!-- /.modal-dalog -->
 </div><!-- /.modal -->
-
-<<<<<<< Updated upstream
-
-
-  
-    <!-- script references -->
-       
-=======
->>>>>>> Stashed changes
     </body>
 </html>

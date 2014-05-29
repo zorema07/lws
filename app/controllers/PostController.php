@@ -142,7 +142,7 @@ class PostController extends \BaseController {
 	{
 		Post::destroy($id);
 
-		Session::flash('message', _('Post Deleted'));
+		Session::flash('message', 'Post Deleted');
 		return Redirect::to('post');
 	}
 

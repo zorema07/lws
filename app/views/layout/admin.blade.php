@@ -135,7 +135,7 @@
 </div>
 <!-- /Main -->
 
-<footer class="text-center">Zorempuia Rela Chuauhang <a href="http://www.bootply.com/85850"><strong>RelaCPanel.com</strong></a></footer>
+<footer class="text-center">Zorempuia Rela Dapzar <a href="http://www.bootply.com/85850"><strong>RelaCPanel.com</strong></a></footer>
 
 <div class="modal" id="addWidgetModal">
   <div class="modal-dialog">

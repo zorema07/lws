@@ -9,12 +9,10 @@ class PostController extends \BaseController {
 	 */
 	public function index()
 	{
-		$post = PostCategory::orderBy('id','asc')
-			->lists('post_categories_name','id');
-			
-		return View::make('post.post')
+		$posts = Post::orderBy('id','asc')->paginate();
+		return View::make('post.post-index')
 			->with(array(
-				'post'  => $post
+				'posts'  => $posts
 				));
 	}
 
@@ -26,7 +24,13 @@ class PostController extends \BaseController {
 	 */
 	public function create()
 	{
-		//
+		$post = PostCategory::orderBy('id','asc')
+			->lists('post_categories_name','id');
+			
+		return View::make('post.post')
+			->with(array(
+				'post'  => $post
+				));
 	}
 
 
@@ -82,7 +86,16 @@ class PostController extends \BaseController {
 	 */
 	public function edit($id)
 	{
-		//
+		$post = PostCategory::orderBy('id','asc')
+			->lists('post_categories_name','id');
+
+		$current_post = Post::find($id);
+			
+		return View::make('post.post-edit')
+			->with(array(
+				'post'  => $post,
+				'current_post' => $current_post
+				));
 	}
 
 
@@ -94,7 +107,28 @@ class PostController extends \BaseController {
 	 */
 	public function update($id)
 	{
-		//
+		$rules = array(
+			'category' 	=> 	'required',
+			'title'		=>	'required',
+			'body'		=>	'required',
+			);
+		$validator = Validator::make(Input::all(), $rules);
+
+		if ($validator -> fails()) {
+			return Redirect::to('post')
+				->withErrors($validator)
+				->withInput(Input::all());
+		}
+		else{
+			$post = Post::find($id);
+			$post->post_categories_id	= 	Input::get('category');
+			$post->post_title	= 	Input::get('title');
+			$post->post_body 	= 	Input::get('body');
+			$post->save();
+
+			Session::flash('message', _('Successfully updated'));
+			return Redirect::to('post');
+		}
 	}
 
 
@@ -106,7 +140,10 @@ class PostController extends \BaseController {
 	 */
 	public function destroy($id)
 	{
-		//
+		Post::destroy($id);
+
+		Session::flash('message', _('Post Deleted'));
+		return Redirect::to('post');
 	}
 
 

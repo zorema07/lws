@@ -135,7 +135,10 @@ class UserController extends \BaseController {
 	 */
 	public function destroy($id)
 	{
-		//
+		User::destroy($id);
+
+		Session::flash('message', 'User Deleted');
+		return Redirect::route('user.index');
 	}
 
 

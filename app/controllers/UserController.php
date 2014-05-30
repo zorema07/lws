@@ -103,7 +103,6 @@ class UserController extends \BaseController {
 			'fullname' 	=> 	'required',
 			'username'		=>	'required',
 			'email'		=>	'required|email',
-			'password'	=> 'required'
 			);
 		$validator = Validator::make(Input::all(), $rules);
 

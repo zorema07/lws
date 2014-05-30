@@ -17,8 +17,8 @@
 					<thead>
 						<tr>
 							<th class="col-md-1">#</th>
-							<th class="col-md-8">Post Category</th>
-							<th class="col-md-3"></th>
+							<th class="col-md-9">Post Category</th>
+							<th class="col-md-2"></th>
 						</tr>
 					</thead>
 					<tbody>

@@ -45,6 +45,8 @@
 		</div>
 	</div>
 </div>
+ <link rel="stylesheet"  href="admin/redactor923/redactor.css">
+        <script src="admin/redactor923/redactor.min.js"></script>
 <script >
 $(function(){
 	$('#editor').redactor({

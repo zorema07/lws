@@ -107,7 +107,7 @@ class UserController extends \BaseController {
 		$validator = Validator::make(Input::all(), $rules);
 
 		if ($validator -> fails()) {
-			return Redirect::reoute('user.create')
+			return Redirect::route('user.edit',$id)
 				->withErrors($validator)
 				->withInput(Input::all());
 		}

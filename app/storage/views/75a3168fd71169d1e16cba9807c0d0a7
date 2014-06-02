@@ -1,0 +1,37 @@
+<?php echo HTML::Style('admin/css/bootstrap.min.css'); ?>
+<?php echo HTML::Script('admin/js/jquery.js'); ?>
+<?php echo HTML::Script('admin/js/jquery.js'); ?>
+<style>
+body{
+	margin-top:200px;
+}
+</style>
+<div class="col-md-4">&nbsp;</div>
+<div class="col-md-4">
+	<div class="panel panel-default">
+		<div class="panel-heading"><strong>REFLEL CPanel</strong></div>
+		<div class="panel-body">
+        <?php echo Form::open(array('url'=>'login','class'=>'form-horizontal')); ?>
+            <div class="form-group">
+            	<div class="col-sm-4"><?php echo Form::label('Username'); ?></div>
+                <div class="col-sm-8">
+                    <?php echo Form::text('username',Input::old('username'),array('class'=>'form-control input-sm','required')); ?>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-4"><?php echo Form::label('Password'); ?></div>
+                <div class="col-sm-8">
+                     <?php echo Form::password('password',array('class'=>'form-control input-sm','required')); ?>
+                </div>
+            </div>
+            <div class="form-group">
+            	<div class="col-sm-4"></div>
+                <div class="col-sm-8">
+            	   <?php echo Form::submit('Login',array('class'=>'btn btn-success btn-block')); ?>
+                </div>
+            </div>
+        <?php echo Form::close(); ?>
+        </div>
+    </div>
+</div>
+<div class="col-md-4">&nbsp;</div>

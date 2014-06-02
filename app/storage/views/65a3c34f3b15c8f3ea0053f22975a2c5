@@ -1,0 +1,57 @@
+
+<?php $__env->startSection('content'); ?>
+<div class="row align-center">
+	<div class="col-md-8">
+		<div class="panel panel-default" >
+			<div class="panel-heading" ><h4><span class="pull right">Edit User</h4></span></div>
+				<div class="panel-body">
+			       <?php echo Form::model($user, array('route' => array('user.update', $user->id),'class' => 'form-horizontal','files' => 'true' ,'method' => 'put')); ?>
+					
+					<?php if(Session::has('message')): ?>
+						<div class="alert alert-success">
+							<?php echo Session::get('message'); ?>	
+						</div>
+					<?php endif; ?>
+
+					<div class="form-group">
+						<?php echo Form::label('fullname', 'Full Name', array('class'=>'control-label')); ?>
+						<?php echo Form::text('fullname', Input::old('fullname', $user->fullname),  array('class' => 'input-sm form-control', 'placeholder'=>'Please enter your Full Name')); ?>
+						<?php if($errors->has('fullname')): ?>
+						<p class="help-block"><span class="text-danger"><?php echo $errors->first('fullname'); ?></span></p>
+						<?php endif; ?>
+					</div>
+
+					<div class="form-group">
+						<?php echo Form::label('username', 'Username', array('class'=>'control-label')); ?>
+						<?php echo Form::text('username', Input::old('username', $user->username),  array('class' => 'input-sm form-control', 'placeholder'=>'Please enter your desire username')); ?>
+						<?php if($errors->has('username')): ?>
+						<p class="help-block"><span class="text-danger"><?php echo $errors->first('username'); ?></span></p>
+						<?php endif; ?>
+					</div>
+					<div class="form-group">
+						<?php echo Form::label('email', 'Email Address', array('class'=>'control-label')); ?>
+						<?php echo Form::text('email', Input::old('email', $user->email),  array('class' => 'input-sm form-control', 'placeholder'=>'Please enter your email address')); ?>
+						<?php if($errors->has('email')): ?>
+						<p class="help-block"><span class="text-danger"><?php echo $errors->first('email'); ?></span></p>
+						<?php endif; ?>
+					</div>
+
+					<div class="form-group">
+						<?php echo Form::label('password', 'Password', array('class'=>'control-label')); ?>
+						<?php echo Form::password('password', array('class'=>'input-sm form-control')); ?>
+						<p class="help-block">Leave blank to retain current password.</p>
+						<?php if($errors->has('password')): ?>
+						<p class="help-block"><span class="text-danger"><?php echo $errors->first('password'); ?></span></p>
+						<?php endif; ?>
+					</div>
+
+					<div class="form-group text-right">
+						<button type="submit" class="btn btn-sm btn-primary">Update</button>
+					</div>
+				</div>
+		</div>
+	</div>
+</div>
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('layout.admin', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

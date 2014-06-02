@@ -16,6 +16,11 @@ Route::get('/', function()
 	
 });
 
+Route::resource('front-gallery', 'FrontGalleryController');
+Route::resource('home', 'HomeController');
+
+
+
 Route::get('login',function(){
 	return View::make('login');
 /*	echo "<form method='post' action='" . URL::to('login')."'>";
@@ -52,5 +57,6 @@ Route::group(array('before'=>'auth'),function(){
 	Route::resource('post-categories', 'PostCategoriesController');
 	Route::resource('post', 'PostController');
 	Route::resource('user', 'UserController');
+
 });
 

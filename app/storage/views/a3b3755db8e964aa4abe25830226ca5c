@@ -17,8 +17,6 @@
         <![endif]-->
         <?php echo HTML::Style('admin/css/styles.css'); ?>
          <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
-        <?php echo HTML::Script('admin/js/scripts.js'); ?>
-        <?php echo HTML::Script('admin/js/bootstrap.min.js'); ?>
         <link rel="stylesheet"  href="admin/redactor923/redactor.css">
         <script src="admin/redactor923/redactor.min.js"></script>
     </head>
@@ -32,7 +30,7 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">Dashboard</a>
+      <a class="navbar-brand" href="<?php echo URL::route('administrator.index'); ?>">Dashboard</a>
     </div>
     <div class="navbar-collapse collapse">
       <ul class="nav navbar-nav navbar-right">
@@ -40,7 +38,7 @@
         <li class="dropdown">
           <a class="dropdown-toggle" role="button" data-toggle="dropdown" href="#"><i class="glyphicon glyphicon-user"></i> Admin <span class="caret"></span></a>
           <ul id="g-account-menu" class="dropdown-menu" role="menu">
-            <li><a href="#">My Profile</a></li>
+            <li><a href="<?php echo URL::route('user.edit',array(Auth::user()->id)); ?>">My Profile</a></li>
           </ul>
         </li>
         <li><a href="<?php echo URL::to('logout'); ?>"><i class="glyphicon glyphicon-lock"></i> Logout</a></li>
@@ -60,64 +58,51 @@
       <hr>
       
       <ul class="list-unstyled">
-        <li class="nav-header"> <a href="#" data-toggle="collapse" data-target="#userMenu">
-          <h5>Settings <i class="glyphicon glyphicon-chevron-down"></i></h5>
+        <li class="active"> <a href="<?php echo URL::route('administrator.index'); ?>"><i class="glyphicon glyphicon-home"></i> Home</a></li>
+        <li class="nav-header"> <a href="#" data-toggle="collapse" data-target="#userMenu">          
+          <h5>Page <i class="glyphicon glyphicon-chevron-down"></i></h5>
           </a>
             <ul class="list-unstyled collapse in" id="userMenu">
-                <li class="active"> <a href="<?php echo URL::route('administrator.index'); ?>"><i class="glyphicon glyphicon-home"></i> Home</a></li>
-                <li><a href="<?php echo URL::route('gallery-categories.index'); ?>"><i class="glyphicon glyphicon-list-alt"></i> Gallery Category</a></li>
-                <li><a href="<?php echo URL::route('gallery.index'); ?>"><i class="glyphicon glyphicon-picture"></i> Gallery</a></li>
+                <li><a href="<?php echo URL::route('post-categories.create'); ?>"><i class="glyphicon glyphicon-plus"></i> New Post Category</a></li>
                 <li><a href="<?php echo URL::route('post-categories.index'); ?>"><i class="glyphicon glyphicon-list"></i> Post Category</a></li>
+                <li><a href="<?php echo URL::route('post.create'); ?>"><i class="glyphicon glyphicon-plus"></i> New Post</a></li>
                 <li><a href="<?php echo URL::route('post.index'); ?>"><i class="glyphicon glyphicon-file"></i> Post</a></li>
-                <li><a href="<?php echo URL::route('user.index'); ?>"><i class="glyphicon glyphicon-user"></i> User Account</a></li>
-                <li><a href="#"><i class="glyphicon glyphicon-off"></i> Logout</a></li>
             </ul>
         </li>
         <li class="nav-header"> <a href="#" data-toggle="collapse" data-target="#menu2">
-          <h5>Reports <i class="glyphicon glyphicon-chevron-right"></i></h5>
+          <h5>Gallery <i class="glyphicon glyphicon-chevron-right"></i></h5>
           </a>
         
             <ul class="list-unstyled collapse" id="menu2">
-                <li><a href="#">Information &amp; Stats</a>
-                </li>
-                <li><a href="#">Views</a>
-                </li>
-                <li><a href="#">Requests</a>
-                </li>
-                <li><a href="#">Timetable</a>
-                </li>
-                <li><a href="#">Alerts</a>
-                </li>
+                <li><a href="<?php echo URL::route('gallery-categories.create'); ?>"><i class="glyphicon glyphicon-plus"></i> New Gallery Category</a></li>
+                <li><a href="<?php echo URL::route('gallery-categories.index'); ?>"><i class="glyphicon glyphicon-list-alt"></i> Gallery Category</a></li>
+                <li><a href="<?php echo URL::route('gallery.create'); ?>"><i class="glyphicon glyphicon-plus"></i> New Gallery</a></li>
+                <li><a href="<?php echo URL::route('gallery.index'); ?>"><i class="glyphicon glyphicon-picture"></i> Gallery</a></li>
             </ul>
         </li>
         <li class="nav-header">
         <a href="#" data-toggle="collapse" data-target="#menu3">
-          <h5>Social Media <i class="glyphicon glyphicon-chevron-right"></i></h5>
+          <h5>Account <i class="glyphicon glyphicon-chevron-right"></i></h5>
           </a>
         
             <ul class="list-unstyled collapse" id="menu3">
-                <li><a href="#"><i class="glyphicon glyphicon-circle"></i> Facebook</a></li>
-                <li><a href="#"><i class="glyphicon glyphicon-circle"></i> Twitter</a></li>
+                <li><a href="<?php echo URL::route('user.create'); ?>"><i class="glyphicon glyphicon-plus"></i> New User Account</a></li>
+                <li><a href="<?php echo URL::route('user.index'); ?>"><i class="glyphicon glyphicon-user"></i> User Account</a></li>
             </ul>
         </li>
       </ul>
            
       <hr>
       
-      <a href="#"><strong><i class="glyphicon glyphicon-link"></i> Resources</strong></a>  
+      <a href="<?php echo URL::to('logout'); ?>"><i class="glyphicon glyphicon-off"></i> <strong>Logout</strong></a>
       
       <hr>
     </div><!-- /col-3 -->
     <div class="col-md-9">
         
       <!-- column 2 --> 
-      <ul class="list-inline pull-right">
-         <li><a href="#"><i class="glyphicon glyphicon-cog"></i></a></li>
-         <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-comment"></i><span class="count">3</span></a><ul class="dropdown-menu" role="menu"><li><a href="#">1. Is there a way..</a></li><li><a href="#">2. Hello, admin. I would..</a></li><li><a href="#"><strong>All messages</strong></a></li></ul></li>
-         <li><a href="#"><i class="glyphicon glyphicon-user"></i></a></li>
-         <li><a title="Add Widget" data-toggle="modal" href="#addWidgetModal"><span class="glyphicon glyphicon-plus-sign"></span> Add Widget</a></li>
-      </ul>
-      <a href="#"><strong><i class="glyphicon glyphicon-dashboard"></i> My Dashboard</strong></a>  
+      
+      <a href="<?php echo URL::route('administrator.index'); ?>"><strong><i class="glyphicon glyphicon-dashboard"></i> My Dashboard</strong></a>  
       
         <hr>
       

@@ -16,7 +16,7 @@
 					<div class="col-md-6">
 						<div class="form-group">
 						<?php echo Form::label('category', 'Select category', array('class'=>'control-label')); ?>
-						<?php echo Form::select('parent_id', array(''=>'Select Category')+$categories, '', array('class' => 'input-sm form-control','style' => 'width:200px')); ?>
+						<?php echo Form::select('parent_id', array('0'=>'No Parent')+$categories, '', array('class' => 'input-sm form-control','style' => 'width:200px')); ?>
 						<?php if($errors->has('parent_id')): ?>
 							<p class="help-block"><span class="text-danger"><?php echo $errors->first('parent_id'); ?></span></p>
 						<?php endif; ?>

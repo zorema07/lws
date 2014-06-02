@@ -26,7 +26,7 @@ class CreatePostCategoriesTable extends Migration {
 	 */
 	public function down()
 	{
-		Scehea::drop('post_categories');
+		Schema::drop('post_categories');
 	}
 
 }

@@ -54,7 +54,7 @@ class UserController extends \BaseController {
 			$user->fullname	= 	Input::get('fullname');
 			$user->username	= 	Input::get('username');
 			$user->email 	= 	Input::get('email');
-			$user->password =	Input::get('password');
+			$user->password =	Hash::make(Input::get('password'));
 			$user->save();
 
 			Session::flash('message', _('Successfully added'));
@@ -117,7 +117,7 @@ class UserController extends \BaseController {
 			$user->username	= 	Input::get('username');
 			$user->email 	= 	Input::get('email');
 			 if(strlen(trim(Input::get('password'))) > 0)
-	    		$user->password = Input::get('password');
+	    		$user->password = Hash::make(Input::get('password'));
 			$user->save();
 
 			Session::flash('message', _('Successfully added'));

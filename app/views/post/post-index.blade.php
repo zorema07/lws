@@ -7,7 +7,6 @@
 			<div class="panel-heading" ><h4>Post <span class="pull-right">
 						<a href="{{route('post.create')}}" class="btn btn-success pull-right glyphicon glyphicon-pencil ">Create</a></span></h4>
 			</div>
-				<div class="panel-body">
 					@if(Session::has('delete'))
 					<div class="alert alert-danger">
 						{{Session::get('delete')}}	
@@ -41,7 +40,6 @@
 							@endforeach
 						</tbody>
 					</table>
-				</div>
 		</div>
 	</div>
 </div>

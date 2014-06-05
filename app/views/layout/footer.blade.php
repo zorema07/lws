@@ -25,16 +25,16 @@
             <div class="col-footer col-md-4 col-xs-6">
               <h3>Contacts</h3>
               <p class="contact-us-details">
-                  <b>Address:</b> 123 Fake Street, LN1 2ST, London, United Kingdom<br/>
-                  <b>Phone:</b> +44 123 654321<br/>
-                  <b>Fax:</b> +44 123 654321<br/>
+                  <b>Motto :</b> 'Seek & you shall find'</br>
+                  <b>Address:</b> Mission Vengthlang, Aizawl<br/>
+                  <b>Phone:</b>  0389 - 2324866<br/>
                   <b>Email:</b> <a href="mailto:getintoutch@yourcompanydomain.com">getintoutch@yourcompanydomain.com</a>
                 </p>
             </div>
             <div class="col-footer col-md-2 col-xs-6">
               <h3>Stay Connected</h3>
               <ul class="footer-stay-connected no-list-style">
-                <li><a href="#" class="facebook"></a></li>
+                <li><a href="https://www.facebook.com/LivingWaterSchool" class="facebook"></a></li>
                 <li><a href="#" class="twitter"></a></li>
                 <li><a href="#" class="googleplus"></a></li>
               </ul>

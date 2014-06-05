@@ -42,13 +42,13 @@
               <div class="menuextras">
             <div class="extras">
               <ul>
-                   <li><a href="page-login.html">Login</a></li>
+                   <li><button href="{{URL::to('login')}}" class="btn btn-promary ">Login</button></li>
               </ul>
             </div>
               </div>
               <nav id="mainmenu" class="mainmenu">
             <ul>
-              <li class="logo-wrapper"><a href="index.html"><img src="img/log.png" alt="Multipurpose Twitter Bootstrap Template"></a></li>
+              <li class="logo-wrapper"><a href="{{URL::route('home.index')}}"><img src="img/log.png" alt="Multipurpose Twitter Bootstrap Template"></a></li>
               <li class="active">
                 <a href="{{URL::route('home.index')}}">Home</a>
               </li>
